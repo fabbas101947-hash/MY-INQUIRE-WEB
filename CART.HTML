@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shopping Cart - INQUIRE Inventory | Review your items and proceed to secure checkout">
+    <meta name="keywords" content="shopping cart, checkout, payment, online shopping">
+    <meta name="author" content="INQUIRE Inventory">
+    <meta name="robots" content="index, follow">
+    <title>Shopping Cart - INQUIRE Inventory</title>
+    <link rel="stylesheet" href="STYLE.CSS">
+    <link rel="stylesheet" href="CART.CSS">
+    <link rel="icon" type="image/png" href="INQUIRE logo.jpeg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <img src="INQUIRE logo.jpeg" alt="INQUIRE Inventory Logo" class="logo-img">
+                    <span class="logo-text">INQUIRE</span>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="INDEX.HTML">Home</a></li>
+                    <li><a href="NEW%20ARRIVAL.HTML">New Arrivals</a></li>
+                    <li><a href="ABOUT.HTML">About</a></li>
+                    <li><a href="CONTACT.HTML">Contact</a></li>
+                    <li><a href="CART.HTML" class="cart-link active">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Shopping Cart</h1>
+            <p>Review and manage your selected items</p>
+        </div>
+    </section>
+
+    <!-- Cart Content -->
+    <section class="cart-section">
+        <div class="container">
+            <div class="cart-grid">
+                <!-- Cart Items -->
+                <div class="cart-items">
+                    <div id="cartItemsContainer" class="items-container">
+                        <!-- Cart items will be rendered here -->
+                    </div>
+                    <div id="emptyCartMessage" class="empty-cart-message" style="display: none;">
+                        <p>Your cart is empty</p>
+                        <a href="NEW%20ARRIVAL.HTML" class="btn btn-primary">Continue Shopping</a>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping:</span>
+                            <span id="shipping">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax (10%):</span>
+                            <span id="tax">$0.00</span>
+                        </div>
+                        <div class="summary-row divider">
+                            <span>Total:</span>
+                            <span id="total" class="total-amount">$0.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Options -->
+                    <div class="shipping-options">
+                        <h3>Shipping Method</h3>
+                        <div class="option">
+                            <input type="radio" id="standard" name="shipping" value="5" checked>
+                            <label for="standard">Standard Shipping (5-7 days) - $5.00</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="express" name="shipping" value="15">
+                            <label for="express">Express Shipping (2-3 days) - $15.00</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="overnight" name="shipping" value="30">
+                            <label for="overnight">Overnight Shipping - $30.00</label>
+                        </div>
+                    </div>
+
+                    <!-- Checkout Buttons -->
+                    <button class="btn btn-primary btn-checkout" id="checkoutBtn">Proceed to Checkout</button>
+                    <a href="NEW%20ARRIVAL.HTML" class="btn btn-secondary btn-continue">Continue Shopping</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Secure Checkout</h2>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Tabs -->
+                <div class="payment-tabs">
+                    <button class="tab-button active" data-tab="payment-method">Payment Method</button>
+                    <button class="tab-button" data-tab="billing">Billing Address</button>
+                    <button class="tab-button" data-tab="review">Review Order</button>
+                </div>
+
+                <!-- Payment Method Tab -->
+                <div id="payment-method" class="tab-content active">
+                    <h3>Select Payment Method</h3>
+                    <div class="payment-methods">
+                        <div class="method-option">
+                            <input type="radio" id="creditCard" name="paymentMethod" value="credit-card" checked>
+                            <label for="creditCard" class="method-label">
+                                <span class="method-icon">💳</span>
+                                <span class="method-name">Credit/Debit Card</span>
+                            </label>
+                        </div>
+                        <div class="method-option">
+                            <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+                            <label for="paypal" class="method-label">
+                                <span class="method-icon">🅿️</span>
+                                <span class="method-name">PayPal</span>
+                            </label>
+                        </div>
+                        <div class="method-option">
+                            <input type="radio" id="stripe" name="paymentMethod" value="stripe">
+                            <label for="stripe" class="method-label">
+                                <span class="method-icon">💰</span>
+                                <span class="method-name">Stripe Payment</span>
+                            </label>
+                        </div>
+                        <div class="method-option">
+                            <input type="radio" id="applePay" name="paymentMethod" value="apple-pay">
+                            <label for="applePay" class="method-label">
+                                <span class="method-icon">🍎</span>
+                                <span class="method-name">Apple Pay</span>
+                            </label>
+                        </div>
+                        <div class="method-option">
+                            <input type="radio" id="googlePay" name="paymentMethod" value="google-pay">
+                            <label for="googlePay" class="method-label">
+                                <span class="method-icon">🔵</span>
+                                <span class="method-name">Google Pay</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Credit Card Form -->
+                    <div id="creditCardForm" class="payment-form active">
+                        <h4>Enter Card Details</h4>
+                        <div class="form-group">
+                            <label>Cardholder Name</label>
+                            <input type="text" placeholder="John Doe" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Card Number</label>
+                            <input type="text" placeholder="1234 5678 9012 3456" class="form-input card-number" maxlength="19">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Expiry Date</label>
+                                <input type="text" placeholder="MM/YY" class="form-input" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label>CVV</label>
+                                <input type="text" placeholder="123" class="form-input cvv" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Billing Address Tab -->
+                <div id="billing" class="tab-content">
+                    <h3>Billing Address</h3>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="John Doe" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="john@example.com" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="+1 (555) 123-4567" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Street Address</label>
+                        <input type="text" placeholder="123 Main Street" class="form-input">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" placeholder="New York" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>State</label>
+                            <input type="text" placeholder="NY" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Zip Code</label>
+                            <input type="text" placeholder="10001" class="form-input">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Country</label>
+                        <input type="text" placeholder="United States" class="form-input">
+                    </div>
+                </div>
+
+                <!-- Review Order Tab -->
+                <div id="review" class="tab-content">
+                    <h3>Order Review</h3>
+                    <div id="reviewItems" class="review-items">
+                        <!-- Items will be rendered here -->
+                    </div>
+                    <div class="review-summary">
+                        <div class="row">
+                            <span>Subtotal:</span>
+                            <span id="reviewSubtotal">$0.00</span>
+                        </div>
+                        <div class="row">
+                            <span>Shipping:</span>
+                            <span id="reviewShipping">$0.00</span>
+                        </div>
+                        <div class="row">
+                            <span>Tax:</span>
+                            <span id="reviewTax">$0.00</span>
+                        </div>
+                        <div class="row total">
+                            <span>Total:</span>
+                            <span id="reviewTotal">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="backBtn">Back</button>
+                <button class="btn btn-primary" id="nextBtn">Next Step</button>
+                <button class="btn btn-success" id="completeBtn" style="display: none;">Complete Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About INQUIRE</h4>
+                    <p>Your trusted source for premium products and exclusive collections with exceptional customer service.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="INDEX.HTML">Home</a></li>
+                        <li><a href="NEW%20ARRIVAL.HTML">New Arrivals</a></li>
+                        <li><a href="ABOUT.HTML">About Us</a></li>
+                        <li><a href="CONTACT.HTML">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="CONTACT.HTML">Contact Us</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms & Conditions</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#facebook" aria-label="Facebook">f</a>
+                        <a href="#twitter" aria-label="Twitter">𝕏</a>
+                        <a href="#instagram" aria-label="Instagram">📷</a>
+                        <a href="#linkedin" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 INQUIRE Inventory. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="SCRIPT.JS"></script>
+    <script src="CART.JS"></script>
+</body>
+</html>

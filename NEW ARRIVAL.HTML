@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="New Arrivals at INQUIRE Inventory - Discover the latest premium products and exclusive collections. Fresh inventory updated regularly.">
+    <meta name="keywords" content="new arrivals, new products, latest items, exclusive collections, INQUIRE inventory">
+    <meta name="author" content="INQUIRE Inventory">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="New Arrivals - INQUIRE Inventory">
+    <meta property="og:description" content="Explore the latest premium products and exclusive collections at INQUIRE Inventory.">
+    <meta property="og:image" content="inquire.png">
+    <title>New Arrivals - Latest Premium Products at INQUIRE Inventory</title>
+    <link rel="stylesheet" href="STYLE.CSS">
+    <link rel="stylesheet" href="NEW%20ARRIVAL.CSS">
+    <link rel="icon" type="image/png" href="INQUIRE logo.jpeg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <img src="INQUIRE logo.jpeg" alt="INQUIRE Inventory Logo" class="logo-img">
+                    <span class="logo-text">INQUIRE</span>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="INDEX.HTML">Home</a></li>
+                    <li><a href="NEW%20ARRIVAL.HTML" class="active">New Arrivals</a></li>
+                    <li><a href="ABOUT.HTML">About</a></li>
+                    <li><a href="CONTACT.HTML">Contact</a></li>
+                    <li><a href="CART.HTML" class="cart-link">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>New Arrivals</h1>
+            <p>Discover Our Latest Premium Products & Collections</p>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="new-arrivals-section">
+        <div class="container">
+            <!-- Filters & Sorting -->
+            <div class="filters-container">
+                <div class="filters-left">
+                    <h3>Filter & Sort</h3>
+                    <div class="filter-group">
+                        <label>
+                            <input type="checkbox" class="filter-checkbox" value="premium"> Premium Products
+                        </label>
+                        <label>
+                            <input type="checkbox" class="filter-checkbox" value="exclusive"> Exclusive Items
+                        </label>
+                        <label>
+                            <input type="checkbox" class="filter-checkbox" value="bestseller"> Best Sellers
+                        </label>
+                    </div>
+                </div>
+                <div class="filters-right">
+                    <label for="sort-select">Sort By:</label>
+                    <select id="sort-select" class="sort-select">
+                        <option value="newest">Newest First</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="new-products-grid">
+                <!-- Product 1 -->
+                <article class="new-product-card">
+                    <div class="product-image-wrapper">
+                        <img src="IMG_0222.jpg" alt="New Premium Collection Product 1 - INQUIRE Inventory" class="product-image">
+                        <span class="badge badge-new">NEW</span>
+                        <div class="overlay">
+                            <button class="btn btn-secondary btn-sm">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Exclusive Premium Item #1</h3>
+                        <p class="product-category">Premium Collection</p>
+                        <div class="rating">⭐⭐⭐⭐⭐ (89 reviews)</div>
+                        <p class="price">$129.99</p>
+                        <p class="product-desc">Newly launched premium product with exceptional features and outstanding quality.</p>
+                        <button class="btn btn-primary btn-add">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="new-product-card">
+                    <div class="product-image-wrapper">
+                        <img src="IMG_0223.jpg" alt="New Exclusive Collection Product 2 - INQUIRE Inventory" class="product-image">
+                        <span class="badge badge-new">NEW</span>
+                        <div class="overlay">
+                            <button class="btn btn-secondary btn-sm">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Limited Edition Item #2</h3>
+                        <p class="product-category">Exclusive Collection</p>
+                        <div class="rating">⭐⭐⭐⭐⭐ (156 reviews)</div>
+                        <p class="price">$199.99</p>
+                        <p class="product-desc">Limited edition exclusive product with unique design and premium materials.</p>
+                        <button class="btn btn-primary btn-add">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="new-product-card">
+                    <div class="product-image-wrapper">
+                        <img src="IMG_0217.jpg" alt="New Best Seller Product 3 - INQUIRE Inventory" class="product-image">
+                        <span class="badge badge-bestseller">BEST SELLER</span>
+                        <div class="overlay">
+                            <button class="btn btn-secondary btn-sm">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Customer Favorite Item #3</h3>
+                        <p class="product-category">Best Sellers</p>
+                        <div class="rating">⭐⭐⭐⭐⭐ (342 reviews)</div>
+                        <p class="price">$149.99</p>
+                        <p class="product-desc">Top-rated product loved by thousands of customers worldwide.</p>
+                        <button class="btn btn-primary btn-add">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 4 -->
+                <article class="new-product-card">
+                    <div class="product-image-wrapper">
+                        <img src="IMG_0218.jpg" alt="New Premium Selection Product 4 - INQUIRE Inventory" class="product-image">
+                        <span class="badge badge-new">NEW</span>
+                        <div class="overlay">
+                            <button class="btn btn-secondary btn-sm">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Selection Item #4</h3>
+                        <p class="product-category">Premium Collection</p>
+                        <div class="rating">⭐⭐⭐⭐⭐ (127 reviews)</div>
+                        <p class="price">$179.99</p>
+                        <p class="product-desc">Carefully selected premium product with exceptional quality standards.</p>
+                        <button class="btn btn-primary btn-add">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 5 -->
+                <article class="new-product-card">
+                    <div class="product-image-wrapper">
+                        <img src="IMG_0219.jpg" alt="New Exclusive Item Product 5 - INQUIRE Inventory" class="product-image">
+                        <span class="badge badge-new">NEW</span>
+                        <div class="overlay">
+                            <button class="btn btn-secondary btn-sm">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Exclusive Collection Item #5</h3>
+                        <p class="product-category">Exclusive Collection</p>
+                        <div class="rating">⭐⭐⭐⭐⭐ (203 reviews)</div>
+                        <p class="price">$159.99</p>
+                        <p class="product-desc">Limited exclusive product with premium quality and unique design.</p>
+                        <button class="btn btn-primary btn-add">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 6 -->
+                <article class="new-product-card">
+                    <div class="product-image-wrapper">
+                        <img src="IMG_0221.jpg" alt="New Collection Product 6 - INQUIRE Inventory" class="product-image">
+                        <span class="badge badge-sale">SALE 20%</span>
+                        <div class="overlay">
+                            <button class="btn btn-secondary btn-sm">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Special Offer Item #6</h3>
+                        <p class="product-category">Premium Collection</p>
+                        <div class="rating">⭐⭐⭐⭐⭐ (298 reviews)</div>
+                        <p class="price"><span class="original-price">$199.99</span> $159.99</p>
+                        <p class="product-desc">Special promotional product with significant savings on this premium item.</p>
+                        <button class="btn btn-primary btn-add">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 7 -->
+                <article class="new-product-card">
+                    <div class="product-image-wrapper">
+                        <img src="IMG_0214.jpg" alt="New Exclusive Selection Product 7 - INQUIRE Inventory" class="product-image">
+                        <span class="badge badge-new">NEW</span>
+                        <div class="overlay">
+                            <button class="btn btn-secondary btn-sm">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>New Exclusive Selection #7</h3>
+                        <p class="product-category">Exclusive Collection</p>
+                        <div class="rating">⭐⭐⭐⭐⭐ (175 reviews)</div>
+                        <p class="price">$189.99</p>
+                        <p class="product-desc">Fresh arrival with premium quality materials and innovative design.</p>
+                        <button class="btn btn-primary btn-add">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 8 -->
+                <article class="new-product-card">
+                    <div class="product-image-wrapper">
+                        <img src="IMG_0215.jpg" alt="New Premium Product 8 - INQUIRE Inventory" class="product-image">
+                        <span class="badge badge-bestseller">BEST SELLER</span>
+                        <div class="overlay">
+                            <button class="btn btn-secondary btn-sm">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Top Rated Item #8</h3>
+                        <p class="product-category">Best Sellers</p>
+                        <div class="rating">⭐⭐⭐⭐⭐ (421 reviews)</div>
+                        <p class="price">$139.99</p>
+                        <p class="product-desc">Customer favorite with consistently high ratings and exceptional reviews.</p>
+                        <button class="btn btn-primary btn-add">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="btn btn-secondary">Load More Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Don't Miss Out on New Arrivals</h2>
+            <p>Subscribe to get notified about our latest products and exclusive offers</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="Enter your email" required aria-label="Email for newsletter">
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About INQUIRE</h4>
+                    <p>Your trusted source for premium products and exclusive collections with exceptional customer service.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="INDEX.HTML">Home</a></li>
+                        <li><a href="NEW%20ARRIVAL.HTML">New Arrivals</a></li>
+                        <li><a href="ABOUT.HTML">About Us</a></li>
+                        <li><a href="CONTACT.HTML">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="CONTACT.HTML">Contact Us</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms & Conditions</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#facebook" aria-label="Facebook">f</a>
+                        <a href="#twitter" aria-label="Twitter">𝕏</a>
+                        <a href="#instagram" aria-label="Instagram">📷</a>
+                        <a href="#linkedin" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 INQUIRE Inventory. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="SCRIPT.JS"></script>
+</body>
+</html>

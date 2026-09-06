@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact INQUIRE Inventory - Get in touch with our customer service team. We're here to help with any questions or feedback.">
+    <meta name="keywords" content="contact us, INQUIRE inventory, customer service, support, inquiries">
+    <meta name="author" content="INQUIRE Inventory">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Contact INQUIRE Inventory - Get Support">
+    <meta property="og:description" content="Reach out to INQUIRE Inventory customer service team for assistance.">
+    <meta property="og:image" content="inquire.png">
+    <title>Contact INQUIRE Inventory - Customer Support & Inquiries</title>
+    <link rel="stylesheet" href="STYLE.CSS">
+    <link rel="stylesheet" href="CONTACT.CSS">
+    <link rel="icon" type="image/png" href="INQUIRE logo.jpeg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <img src="INQUIRE logo.jpeg" alt="INQUIRE Inventory Logo" class="logo-img">
+                    <span class="logo-text">INQUIRE</span>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="INDEX.HTML">Home</a></li>
+                    <li><a href="NEW%20ARRIVAL.HTML">New Arrivals</a></li>
+                    <li><a href="ABOUT.HTML">About</a></li>
+                    <li><a href="CONTACT.HTML" class="active">Contact</a></li>
+                    <li><a href="CART.HTML" class="cart-link">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We'd Love to Hear from You</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Have a question? We're here to help! Reach out to us through any of the following methods:</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">📧</div>
+                            <h3>Email</h3>
+                            <p>
+                                <strong>Support:</strong> support@inquire-inventory.com<br>
+                                <strong>Sales:</strong> sales@inquire-inventory.com<br>
+                                <strong>General:</strong> info@inquire-inventory.com
+                            </p>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">📞</div>
+                            <h3>Phone</h3>
+                            <p>
+                                <strong>Toll Free:</strong> 1-800-INQUIRE<br>
+                                <strong>International:</strong> +1-555-0123<br>
+                                <strong>Hours:</strong> Mon-Fri, 9AM-6PM EST
+                            </p>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">📍</div>
+                            <h3>Address</h3>
+                            <p>
+                                INQUIRE Inventory<br>
+                                123 Premium Street<br>
+                                New York, NY 10001<br>
+                                United States
+                            </p>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">⏰</div>
+                            <h3>Business Hours</h3>
+                            <p>
+                                <strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM<br>
+                                <strong>Saturday:</strong> 10:00 AM - 4:00 PM<br>
+                                <strong>Sunday:</strong> Closed<br>
+                                <strong>Holidays:</strong> Closed
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="social-contact">
+                        <h3>Follow Us on Social Media</h3>
+                        <div class="social-links-large">
+                            <a href="#facebook" aria-label="Facebook"><span>Facebook</span></a>
+                            <a href="#twitter" aria-label="Twitter"><span>Twitter</span></a>
+                            <a href="#instagram" aria-label="Instagram"><span>Instagram</span></a>
+                            <a href="#linkedin" aria-label="LinkedIn"><span>LinkedIn</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h2>Send us a Message</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" id="loadFormBtn">Load Saved Data</button>
+                            <button type="button" class="btn btn-secondary" id="clearFormBtn">Clear Saved Data</button>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="product-inquiry">Product Inquiry</option>
+                                <option value="order-issue">Order Issue</option>
+                                <option value="shipping">Shipping & Delivery</option>
+                                <option value="returns">Returns & Refunds</option>
+                                <option value="feedback">General Feedback</option>
+                                <option value="partnership">Partnership Inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Tell us how we can help you..." required></textarea>
+                        </div>
+
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">I agree to be contacted by INQUIRE Inventory regarding my inquiry</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+                        <p class="auto-save-notice" id="autoSaveNotice" style="display:none; color: #10b981; margin-top: 10px; font-weight: 600;">✓ Form data saved automatically</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What is your return policy?</h3>
+                    <p>We offer a 30-day money-back guarantee on all purchases. If you're not satisfied, simply contact our support team to initiate a return.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How long does shipping take?</h3>
+                    <p>Standard shipping takes 5-7 business days. Express shipping options are available for faster delivery at checkout.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you ship internationally?</h3>
+                    <p>Yes! We ship to over 150 countries worldwide. International shipping rates and times vary by location.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How can I track my order?</h3>
+                    <p>You'll receive a tracking number via email once your order ships. Use this to monitor delivery progress.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What payment methods do you accept?</h3>
+                    <p>We accept all major credit cards, PayPal, Apple Pay, Google Pay, and other secure payment methods.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is my personal information secure?</h3>
+                    <p>Yes, we use industry-leading encryption and security measures to protect your personal and payment information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section (Placeholder) -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Find Us</h2>
+            <div class="map-placeholder">
+                <div class="map-content">
+                    <p>📍 INQUIRE Inventory Headquarters</p>
+                    <p>123 Premium Street, New York, NY 10001</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About INQUIRE</h4>
+                    <p>Your trusted source for premium products and exclusive collections with exceptional customer service.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="INDEX.HTML">Home</a></li>
+                        <li><a href="NEW%20ARRIVAL.HTML">New Arrivals</a></li>
+                        <li><a href="ABOUT.HTML">About Us</a></li>
+                        <li><a href="CONTACT.HTML">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="CONTACT.HTML">Contact Us</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms & Conditions</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#facebook" aria-label="Facebook">f</a>
+                        <a href="#twitter" aria-label="Twitter">𝕏</a>
+                        <a href="#instagram" aria-label="Instagram">📷</a>
+                        <a href="#linkedin" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 INQUIRE Inventory. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="SCRIPT.JS"></script>
+</body>
+</html>
