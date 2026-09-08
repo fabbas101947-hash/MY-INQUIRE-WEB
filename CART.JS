@@ -1,10 +1,14 @@
 // ===== Cart Page Functionality =====
 
+function formatPKR(amount) {
+    return `PKR ${Number(amount).toFixed(2)}`;
+}
+
 // Render cart items on page load
 document.addEventListener('DOMContentLoaded', function() {
     renderCartItems();
     setupEventListeners();
-    updatePaymentForm();
+    loadSavedDeliveryDetails();
 });
 
 // ===== Render Cart Items =====
@@ -31,14 +35,14 @@ function renderCartItems() {
             <div class="item-details">
                 <div class="item-name">${item.name}</div>
                 <div class="item-category">${item.category}</div>
-                <div class="item-price">$${item.price.toFixed(2)}</div>
+                <div class="item-price">${formatPKR(item.price)}</div>
                 <div class="item-controls">
                     <div class="quantity-control">
                         <button class="qty-btn" onclick="updateQuantity('${item.id}', ${item.quantity - 1})">−</button>
                         <input type="number" class="qty-input" value="${item.quantity}" min="1" onchange="updateQuantity('${item.id}', this.value)">
                         <button class="qty-btn" onclick="updateQuantity('${item.id}', ${item.quantity + 1})">+</button>
                     </div>
-                    <div class="item-subtotal">$${(item.price * item.quantity).toFixed(2)}</div>
+                    <div class="item-subtotal">${formatPKR(item.price * item.quantity)}</div>
                     <button class="remove-btn" onclick="removeFromCart('${item.id}')">Remove</button>
                 </div>
             </div>
@@ -73,24 +77,18 @@ function updateCartSummary() {
     const cart = StorageManager.getCart();
     const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     
-    // Get selected shipping
-    const shippingSelect = document.querySelector('input[name="shipping"]:checked');
-    const shipping = shippingSelect ? parseFloat(shippingSelect.value) : 0;
-    
     const tax = subtotal * 0.1;
-    const total = subtotal + shipping + tax;
+    const total = subtotal + tax;
     
     // Update summary
-    document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
-    document.getElementById('shipping').textContent = `$${shipping.toFixed(2)}`;
-    document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
-    document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+    document.getElementById('subtotal').textContent = formatPKR(subtotal);
+    document.getElementById('tax').textContent = formatPKR(tax);
+    document.getElementById('total').textContent = formatPKR(total);
     
     // Update review summary
-    document.getElementById('reviewSubtotal').textContent = `$${subtotal.toFixed(2)}`;
-    document.getElementById('reviewShipping').textContent = `$${shipping.toFixed(2)}`;
-    document.getElementById('reviewTax').textContent = `$${tax.toFixed(2)}`;
-    document.getElementById('reviewTotal').textContent = `$${total.toFixed(2)}`;
+    document.getElementById('reviewSubtotal').textContent = formatPKR(subtotal);
+    document.getElementById('reviewTax').textContent = formatPKR(tax);
+    document.getElementById('reviewTotal').textContent = formatPKR(total);
     
     updateReviewItems();
 }
@@ -105,20 +103,13 @@ function updateReviewItems() {
             <div>
                 <div class="review-item-name">${item.name} x${item.quantity}</div>
             </div>
-            <div class="review-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
+            <div class="review-item-price">${formatPKR(item.price * item.quantity)}</div>
         </div>
     `).join('');
 }
 
 // ===== Setup Event Listeners =====
 function setupEventListeners() {
-    // Shipping option change
-    document.querySelectorAll('input[name="shipping"]').forEach(radio => {
-        radio.addEventListener('change', function() {
-            updateCartSummary();
-        });
-    });
-    
     // Checkout button
     document.getElementById('checkoutBtn').addEventListener('click', function() {
         const cart = StorageManager.getCart();
@@ -144,10 +135,6 @@ function setupEventListeners() {
     document.getElementById('backBtn').addEventListener('click', handleBackStep);
     document.getElementById('completeBtn').addEventListener('click', completeOrder);
     
-    // Payment method selection
-    document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
-        radio.addEventListener('change', updatePaymentForm);
-    });
 }
 
 // ===== Payment Modal Functions =====
@@ -196,21 +183,6 @@ function updateTabUI() {
     }
 }
 
-// ===== Update Payment Form =====
-function updatePaymentForm() {
-    const selectedMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
-    
-    // Hide all payment forms
-    document.querySelectorAll('.payment-form').forEach(form => {
-        form.classList.remove('active');
-    });
-    
-    // Show selected payment form
-    if (selectedMethod === 'credit-card') {
-        document.getElementById('creditCardForm')?.classList.add('active');
-    }
-}
-
 // ===== Handle Tab Navigation =====
 function handleNextStep() {
     const tabs = ['payment-method', 'billing', 'review'];
@@ -243,57 +215,56 @@ function validateCurrentTab() {
             return false;
         }
         
-        if (selectedMethod === 'credit-card') {
-            const cardInputs = document.querySelectorAll('#creditCardForm .form-input');
-            let isValid = true;
-            
-            cardInputs.forEach(input => {
-                if (!input.value.trim()) {
-                    isValid = false;
-                }
-            });
-            
-            if (!isValid) {
-                showNotification('Please fill in all card details', 'error');
-                return false;
-            }
-        }
     }
     
     if (currentTab === 'billing') {
-        const billingInputs = document.querySelectorAll('#billing .form-input');
-        let isValid = true;
-        
-        billingInputs.forEach(input => {
-            if (!input.value.trim()) {
-                isValid = false;
-            }
-        });
-        
-        if (!isValid) {
-            showNotification('Please fill in all billing address fields', 'error');
+        const deliveryForm = document.getElementById('deliveryForm');
+
+        if (!deliveryForm.checkValidity()) {
+            deliveryForm.reportValidity();
+            showNotification('Please enter valid delivery details', 'error');
             return false;
         }
+
+        localStorage.setItem('inquire_delivery_details', JSON.stringify(getDeliveryDetails()));
     }
     
     return true;
+}
+
+function getDeliveryDetails() {
+    const formData = new FormData(document.getElementById('deliveryForm'));
+    return Object.fromEntries(formData.entries());
+}
+
+function loadSavedDeliveryDetails() {
+    try {
+        const savedDetails = JSON.parse(localStorage.getItem('inquire_delivery_details') || 'null');
+        if (!savedDetails) return;
+
+        Object.entries(savedDetails).forEach(([field, value]) => {
+            const input = document.querySelector(`#deliveryForm [name="${field}"]`);
+            if (input) input.value = value;
+        });
+    } catch {
+        localStorage.removeItem('inquire_delivery_details');
+    }
 }
 
 // ===== Complete Order =====
 function completeOrder() {
     const cart = StorageManager.getCart();
     const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    const shippingSelect = document.querySelector('input[name="shipping"]:checked');
-    const shipping = shippingSelect ? parseFloat(shippingSelect.value) : 0;
     const tax = subtotal * 0.1;
-    const total = subtotal + shipping + tax;
+    const total = subtotal + tax;
     
     const selectedMethod = document.querySelector('input[name="paymentMethod"]:checked')?.value;
+    const deliveryDetails = getDeliveryDetails();
     
     // Simulate payment processing
     const completeBtn = document.getElementById('completeBtn');
     const originalText = completeBtn.textContent;
-    completeBtn.textContent = 'Processing Payment...';
+    completeBtn.textContent = 'Placing Order...';
     completeBtn.disabled = true;
     
     setTimeout(() => {
@@ -307,11 +278,11 @@ function completeOrder() {
             date: new Date().toLocaleString(),
             items: cart,
             subtotal,
-            shipping,
             tax,
             total,
             paymentMethod: selectedMethod,
-            status: 'Confirmed'
+            deliveryDetails,
+            status: 'Cash on Delivery — Pending'
         });
         localStorage.setItem('inquire_orders', JSON.stringify(orders));
         
@@ -357,7 +328,7 @@ function showOrderConfirmation(orderId, total) {
                 <p style="color: #6b7280; margin: 0 0 10px 0;">Order ID:</p>
                 <p style="color: #1f2937; font-weight: 700; font-size: 1.1rem; margin: 0 0 20px 0;">${orderId}</p>
                 <p style="color: #6b7280; margin: 0 0 10px 0;">Total Amount:</p>
-                <p style="color: #6366f1; font-weight: 700; font-size: 1.3rem; margin: 0;">$${total.toFixed(2)}</p>
+                <p style="color: #6366f1; font-weight: 700; font-size: 1.3rem; margin: 0;">${formatPKR(total)}</p>
             </div>
             <p style="color: #6b7280; margin-bottom: 30px;">
                 A confirmation email has been sent to your registered email address.
@@ -389,17 +360,5 @@ function showOrderConfirmation(orderId, total) {
     // Show notification
     showNotification(`Order ${orderId} confirmed!`, 'success');
 }
-
-// ===== Format Card Number =====
-document.addEventListener('DOMContentLoaded', function() {
-    const cardInput = document.querySelector('.card-number');
-    if (cardInput) {
-        cardInput.addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\s/g, '');
-            let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
-            e.target.value = formattedValue;
-        });
-    }
-});
 
 console.log('Shopping Cart Functionality Initialized');

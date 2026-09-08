@@ -1,11 +1,11 @@
 /* ===== CSS Variables (Theme Colors) ===== */
 :root {
-    --primary-color: rgb(61, 13, 13);
-    --secondary-color: #ec4899;
-    --dark-color: #1f2937;
-    --light-color: #663309;
-    --gray-color: #6b7280;
-    --border-color: #e5e7eb;
+    --primary-color: #5b1d24;
+    --secondary-color: #b8873e;
+    --dark-color: #2a1719;
+    --light-color: #f8efe3;
+    --gray-color: #6b5b59;
+    --border-color: #e7d8c5;
     --success-color: #10b981;
     --warning-color: #f59e0b;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -27,7 +27,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--dark-color);
-    background-color: #722a2a;
+    background-color: #fffaf5;
     overflow-x: hidden;
 }
 
@@ -80,12 +80,12 @@ a:hover {
 .btn-primary {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 4px 15px rgba(91, 29, 36, 0.28);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+    box-shadow: 0 8px 22px rgba(91, 29, 36, 0.38);
 }
 
 .btn-secondary {
@@ -101,7 +101,7 @@ a:hover {
 
 /* ===== Navigation Bar ===== */
 .navbar {
-    background: white;
+    background: rgba(255, 250, 245, 0.96);
     box-shadow: var(--shadow-sm);
     position: sticky;
     top: 0;
@@ -218,15 +218,15 @@ a:hover {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 50px;
-    padding: 80px 0;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(236, 72, 153, 0.05));
+    padding: 90px max(20px, calc((100% - 1200px) / 2));
+    background: linear-gradient(135deg, #fffaf5 0%, #f8efe3 100%);
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
     line-height: 1.1;
     margin-bottom: 20px;
-    color: var(--dark-color);
+    color: var(--primary-color);
 }
 
 .hero-subtitle {
@@ -257,14 +257,15 @@ a:hover {
 /* ===== Features Section ===== */
 .features {
     padding: 80px 0;
-    background-color: var(--light-color);
+    background-color: #f8efe3;
 }
 
 .section-title {
     text-align: center;
     margin-bottom: 50px;
     font-size: 2.5rem;
-    color: var(--dark-color);
+    color: var(--primary-color);
+    letter-spacing: 0.02em;
 }
 
 .features-grid {
@@ -300,6 +301,7 @@ a:hover {
 /* ===== Products Section ===== */
 .products {
     padding: 80px 0;
+    background-color: #fffaf5;
 }
 
 .products-grid {
@@ -382,7 +384,7 @@ a:hover {
 /* ===== Categories Section ===== */
 .categories {
     padding: 80px 0;
-    background-color: var(--light-color);
+    background-color: #f8efe3;
 }
 
 .categories-grid {
@@ -416,6 +418,7 @@ a:hover {
     left: 20px;
     color: white;
     font-size: 1.8rem;
+    margin-bottom: 0;
     z-index: 2;
 }
 
@@ -441,6 +444,7 @@ a:hover {
 /* ===== Testimonials Section ===== */
 .testimonials {
     padding: 80px 0;
+    background-color: #fffaf5;
 }
 
 .testimonials-grid {
@@ -453,7 +457,7 @@ a:hover {
     background: white;
     padding: 30px;
     border-radius: 12px;
-    border-left: 4px solid var(--primary-color);
+    border-left: 4px solid var(--secondary-color);
     box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
 }
@@ -515,6 +519,11 @@ a:hover {
     outline: none;
 }
 
+.newsletter-form .btn-primary {
+    background: var(--dark-color);
+    box-shadow: none;
+}
+
 /* ===== Footer ===== */
 .footer {
     background-color: var(--dark-color);
@@ -553,7 +562,7 @@ a:hover {
 }
 
 .footer-section a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .social-links {
@@ -573,7 +582,8 @@ a:hover {
 }
 
 .social-links a:hover {
-    background: var(--primary-color);
+    background: var(--secondary-color);
+    color: var(--dark-color);
 }
 
 .footer-bottom {
@@ -604,7 +614,7 @@ a:hover {
         top: 70px;
         left: 0;
         right: 0;
-        background: white;
+        background: #fffaf5;
         padding: 20px;
         box-shadow: var(--shadow-sm);
     }
@@ -620,8 +630,9 @@ a:hover {
     /* Hero Section */
     .hero {
         grid-template-columns: 1fr;
-        padding: 50px 0;
+        padding: 50px 20px;
         gap: 30px;
+        text-align: center;
     }
 
     .hero-content h1 {
@@ -682,7 +693,7 @@ a:hover {
 
     /* Hero */
     .hero {
-        padding: 30px 0;
+        padding: 30px 15px;
     }
 
     .hero-content h1 {

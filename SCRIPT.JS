@@ -72,6 +72,16 @@ const StorageManager = {
     }
 };
 
+let apiCsrfToken = null;
+async function apiCsrf() {
+    if (apiCsrfToken) return apiCsrfToken;
+    const response = await fetch('api/index.php?action=csrf', { credentials: 'same-origin' });
+    const data = await response.json();
+    if (!response.ok || !data.csrf) throw new Error('Unable to start a secure request.');
+    apiCsrfToken = data.csrf;
+    return apiCsrfToken;
+}
+
 // ===== Update Cart UI =====
 function updateCartUI() {
     const cart = StorageManager.getCart();
@@ -259,16 +269,19 @@ document.addEventListener('DOMContentLoaded', function() {
             const card = this.closest('.product-card, .new-product-card');
             if (card) {
                 const productName = card.querySelector('h3').textContent;
-                const priceText = card.querySelector('.price').textContent.replace(/[^0-9.]/g, '');
+                const priceValues = card.querySelector('.price').textContent.match(/\d+(?:\.\d+)?/g);
                 const imageUrl = card.querySelector('img').src;
                 const badge = card.querySelector('.badge')?.textContent || 'Featured';
                 
                 const product = {
-                    id: `product-${Date.now()}-${Math.random()}`,
+                    id: `${card.dataset.productId || `product-${Date.now()}`}-${card.dataset.size || ''}-${card.dataset.color || ''}`,
+                    product_id: Number(card.dataset.productId) || null,
                     name: productName,
-                    price: parseFloat(priceText) || 99.99,
+                    price: parseFloat(priceValues?.at(-1)) || 99.99,
                     image: imageUrl,
                     category: badge,
+                    size: card.dataset.size || '',
+                    color: card.dataset.color || '',
                     quantity: 1
                 };
                 

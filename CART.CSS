@@ -192,41 +192,6 @@
     font-size: 1.2rem;
 }
 
-/* Shipping Options */
-.shipping-options {
-    margin-bottom: 25px;
-    padding-bottom: 25px;
-    border-bottom: 2px solid var(--border-color);
-}
-
-.shipping-options h3 {
-    margin-bottom: 15px;
-    color: var(--dark-color);
-    font-size: 1.1rem;
-}
-
-.option {
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-    cursor: pointer;
-}
-
-.option input[type="radio"] {
-    width: 18px;
-    height: 18px;
-    margin-right: 10px;
-    cursor: pointer;
-    accent-color: var(--primary-color);
-}
-
-.option label {
-    cursor: pointer;
-    color: var(--gray-color);
-    font-weight: 500;
-    margin: 0;
-}
-
 /* Checkout Buttons */
 .btn-checkout,
 .btn-continue {
@@ -389,6 +354,12 @@
     color: var(--dark-color);
     text-align: center;
     font-size: 0.9rem;
+}
+
+.cod-note {
+    margin: 0;
+    color: var(--gray-color);
+    text-align: center;
 }
 
 /* Payment Form */
