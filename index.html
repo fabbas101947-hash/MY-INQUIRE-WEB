@@ -13,7 +13,12 @@
     <meta property="og:url" content="">
     <meta name="twitter:card" content="summary_large_image">
     <title>INQUIRE STORE</title>
-    <link rel="stylesheet" href="STYLE.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="STYLE.css">
     <link rel="icon" type="image/png" href="INQUIRE logo.jpeg">
 </head>
 <body>
@@ -32,11 +37,12 @@
                 </div>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="Shopnow.html">Shop Now</a></li>
-                    <li><a href="NEW ARRIVAL.HTML">New Arrivals</a></li>
-                    <li><a href="ABOUT.HTML">About</a></li>
-                    <li><a href="CONTACT.HTML">Contact</a></li>
-                    <li><a href="CART.HTML" class="cart-link">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
+                    <li><a href="Shopnow.html" class="active">Shop Now</a></li>
+                    <li><a href="NEW ARRIVAL.html">New Arrivals</a></li>
+                    <li><a href="ABOUT.html">About</a></li>
+                    <li><a href="CONTACT.html">Contact</a></li>
+                    <li><a href="CART.html" class="cart-link">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
+                    <li><a href="login.html" class="login-link"><i class="fa-solid fa-circle-user"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -74,7 +80,7 @@
                         <span class="badge">New</span>
                     </div>
                     <div class="product-info">
-                        <button class="btn btn-secondary">Shop Now</button>
+                        <a href="Shopnow.html" class="btn btn-primary">Shop Now</a>
                     </div>
                 </article>
 
@@ -84,7 +90,7 @@
                         <span class="badge">Best Seller</span>
                     </div>
                     <div class="product-info">
-                        <button class="btn btn-secondary">Shop Now</button>
+                        <a href="Shopnow.html" class="btn btn-primary">Shop Now</a>
                     </div>
                 </article>
 
@@ -94,12 +100,12 @@
                         <span class="badge">Featured</span>
                     </div>
                     <div class="product-info">
-                        <button class="btn btn-secondary">Shop Now</button>
+                        <a href="Shopnow.html" class="btn btn-primary">Shop Now</a>
                     </div>
                 </article>
             </div>
             <div class="view-all-container">
-                <a href="NEW%20ARRIVAL.HTML" class="btn btn-primary">View All Products</a>
+                <a href="Shopnow.html" class="btn btn-primary">View All Products</a>
             </div>
         </div>
     </section>
@@ -124,39 +130,13 @@
             </div>
         </div>
     </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">What Our Customers Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Outstanding quality and fast shipping! INQUIRE Inventory has become my go-to store for premium products."</p>
-                    <p class="testimonial-author">- Sarah Johnson</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Excellent customer service and amazing product selection. Highly recommended for anyone looking for quality!"</p>
-                    <p class="testimonial-author">- Michael Chen</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Best prices in the market combined with premium quality. INQUIRE Inventory never disappoints!"</p>
-                    <p class="testimonial-author">- Emma Williams</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Newsletter Section -->
     <section class="newsletter">
         <div class="container">
-            <h2>Subscribe to Our Newsletter</h2>
-            <p>Get exclusive offers and updates delivered to your inbox</p>
+            <h2>Login to Our Website</h2>
             <form class="newsletter-form" id="newsletterForm">
                 <input type="email" placeholder="Enter your email" required aria-label="Email for newsletter">
-                <button type="submit" class="btn btn-primary">Subscribe</button>
+                <a href="login.html" class="btn btn-primary">Login</a>
             </form>
         </div>
     </section>
@@ -172,16 +152,17 @@
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="INDEX.HTML">Home</a></li>
-                        <li><a href="NEW%20ARRIVAL.HTML">New Arrivals</a></li>
-                        <li><a href="ABOUT.HTML">About Us</a></li>
-                        <li><a href="CONTACT.HTML">Contact</a></li>
+                        <li><a href="INDEX.html">Home</a></li>
+                        <li><a href="Shopnow.html">Shop Now</a></li>
+                        <li><a href="NEW ARRIVAL.html">New Arrivals</a></li>
+                        <li><a href="ABOUT.html">About Us</a></li>
+                        <li><a href="CONTACT.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Customer Service</h4>
                     <ul>
-                        <li><a href="CONTACT.HTML">Contact Us</a></li>
+                        <li><a href="CONTACT.html">Contact Us</a></li>
                         <li><a href="#privacy">Privacy Policy</a></li>
                         <li><a href="#terms">Terms & Conditions</a></li>
                         <li><a href="#faq">FAQ</a></li>
@@ -203,6 +184,6 @@
         </div>
     </footer>
 
-    <script src="SCRIPT.JS"></script>
+    <script src="SCRIPT.js"></script>
 </body>
 </html>

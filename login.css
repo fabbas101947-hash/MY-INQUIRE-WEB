@@ -1,0 +1,378 @@
+/* =========================================
+   INQUIRE STORE - LOGIN PAGE
+   ========================================= */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  background: #0b0b0b;
+  color: #ffffff;
+}
+
+
+/* =========================================
+   AUTH PAGE
+   ========================================= */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+
+  /* Premium dark background */
+  background:
+    radial-gradient(circle at top left, rgba(255, 140, 0, 0.10), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(255, 140, 0, 0.08), transparent 35%),
+    #0b0b0b;
+
+  position: relative;
+}
+
+
+/* =========================================
+   BACK TO HOME BUTTON
+   ========================================= */
+
+.hero-btn {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 20px;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+
+  border-radius: 6px;
+
+  transition: all 0.3s ease;
+}
+
+.hero-btn-outline {
+  color: #ffffff;
+  border: 1px solid #444;
+  background: transparent;
+}
+
+.hero-btn-outline:hover {
+  color: #000000;
+  background: #ff8c00;
+  border-color: #ff8c00;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   LOGIN CARD
+   ========================================= */
+
+.login-card {
+  width: 100%;
+  max-width: 450px;
+
+  padding: 45px 40px;
+
+  background: rgba(20, 20, 20, 0.95);
+
+  border: 1px solid #2c2c2c;
+  border-radius: 14px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.6);
+
+  animation: cardAppear 0.6s ease;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   BRAND
+   ========================================= */
+
+.brand {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.brand img {
+  width: 75px;
+  height: 75px;
+
+  object-fit: contain;
+
+  border-radius: 10px;
+
+  margin-bottom: 15px;
+}
+
+.brand h1 {
+  font-size: 27px;
+  letter-spacing: 2px;
+  font-weight: 800;
+
+  color: #ffffff;
+}
+
+.brand p {
+  margin-top: 8px;
+
+  color: #999999;
+  font-size: 14px;
+}
+
+
+/* =========================================
+   FORM
+   ========================================= */
+
+#loginForm {
+  width: 100%;
+}
+
+.field {
+  margin-bottom: 22px;
+}
+
+.field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #dddddd;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.field input {
+  width: 100%;
+
+  padding: 14px 15px;
+
+  border: 1px solid #363636;
+  border-radius: 7px;
+
+  outline: none;
+
+  background: #111111;
+  color: #ffffff;
+
+  font-size: 15px;
+
+  transition: all 0.3s ease;
+}
+
+.field input::placeholder {
+  color: #666666;
+}
+
+.field input:focus {
+  border-color: #ff8c00;
+
+  box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.10);
+}
+
+
+/* =========================================
+   REMEMBER / FORGOT PASSWORD
+   ========================================= */
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 5px 0 25px;
+
+  font-size: 13px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #aaa;
+
+  cursor: pointer;
+}
+
+.remember input {
+  width: 15px;
+  height: 15px;
+
+  accent-color: #ff8c00;
+
+  cursor: pointer;
+}
+
+.meta a {
+  color: #ff8c00;
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+.meta a:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+   ========================================= */
+
+.btn {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #ff8c00;
+  color: #000000;
+
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 25px rgba(255, 140, 0, 0.20);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   FEEDBACK MESSAGE
+   ========================================= */
+
+.feedback {
+  min-height: 20px;
+
+  margin-top: 15px;
+
+  text-align: center;
+
+  font-size: 13px;
+  color: #ff8c00;
+}
+
+
+/* =========================================
+   CREATE ACCOUNT
+   ========================================= */
+
+.signup {
+  margin-top: 25px;
+
+  text-align: center;
+
+  color: #888888;
+
+  font-size: 13px;
+}
+
+.signup a {
+  color: #ff8c00;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: color 0.3s ease;
+}
+
+.signup a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .auth-page {
+    padding: 80px 15px 30px;
+  }
+
+  .hero-btn {
+    top: 20px;
+    left: 20px;
+
+    padding: 9px 15px;
+
+    font-size: 13px;
+  }
+
+  .login-card {
+    padding: 35px 25px;
+
+    border-radius: 12px;
+  }
+
+  .brand h1 {
+    font-size: 23px;
+  }
+
+  .brand img {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+
+@media (max-width: 380px) {
+
+  .login-card {
+    padding: 30px 20px;
+  }
+
+  .meta {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+}

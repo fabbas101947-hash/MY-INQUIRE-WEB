@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inquire Store | Create Account</title>
+   <link rel="icon" type="image/png" href="INQUIRE logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body class="auth-page">
+  <a href="login.html" class="hero-btn hero-btn-outline">Back to Home</a>
+  <main class="card">
+    <div class="brand">
+      <img src="INQUIRE logo.jpeg" alt="Inquire Store logo" />
+      <h1>INQUIRE STORE</h1>
+      <p>Create your account</p>
+    </div>
+
+    <form id="registerForm" action="#" method="post" novalidate>
+      <div class="field">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Abbas Khan" required />
+      </div>
+
+      <div class="field">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Minimum 6 characters" required />
+      </div>
+
+      <div class="field">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password" required />
+      </div>
+
+      <button class="btn" type="submit">CREATE ACCOUNT</button>
+      <p class="feedback" id="feedback" aria-live="polite"></p>
+      <p class="helper">Already have an account? <a href="login.html">Login</a></p>
+    </form>
+  </main>
+
+  <script>
+    const registerForm = document.getElementById("registerForm");
+    const feedback = document.getElementById("feedback");
+
+    registerForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      let password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (name.length < 2 || !validEmail || password.length < 6) {
+        feedback.textContent = "Fill all fields correctly. Password must be at least 6 characters.";
+        feedback.style.color = "#ff7b7b";
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        feedback.textContent = "Passwords do not match.";
+        feedback.style.color = "#ff7b7b";
+        return;
+      }
+
+      try {
+        const response = fetch('/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, password }),
+        });
+
+        const body = response.json();
+        if (!response.ok) {
+          throw new Error(body.error || 'Registration failed.');
+        }
+
+        feedback.textContent = body.message || 'Account created successfully. Redirecting to login...';
+        feedback.style.color = '#8de1b8';
+        setTimeout(function () {
+          window.location.href = 'login.html';
+        }, 1200);
+      } catch (error) {
+        feedback.textContent = error.message;
+        feedback.style.color = '#ff7b7b';
+      }
+    });
+  </script>
+</body>
+</html>

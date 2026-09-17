@@ -177,10 +177,14 @@ body {
 }
 
 .hero-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
     width: 100%;
     height: auto;
     display: block;
     border-radius: 12px;
+    background-position: cover;
     transition: transform 0.3s ease;
 }
 
