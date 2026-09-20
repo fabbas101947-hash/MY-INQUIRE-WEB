@@ -136,19 +136,46 @@ body {
     background-clip: unset;
 }
 
+/* DESKTOP - Hide hamburger */
 .hamburger {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 6px;
+  display: none !important;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #4a1e1e;
+  display: block;
+  border-radius: 5px;
 }
 
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: var(--primary-color);
-    border-radius: 2px;
-    transition: all 0.3s ease;
+/* DESKTOP - Always show menu */
+.nav-links {
+  display: flex !important;
+}
+
+/* MOBILE ONLY - Show hamburger, hide menu */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex !important;
+  }
+  .nav-links {
+    display: none !important;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background: white;
+    width: 220px;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 9999;
+  }
+  .nav-links.active {
+    display: flex !important;
+  }
 }
 .hero {
     display: grid;
