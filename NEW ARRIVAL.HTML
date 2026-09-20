@@ -12,36 +12,109 @@
     <meta property="og:image" content="inquire.png">
     <title>New Arrivals - INQUIRE Store</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="STYLE.CSS">
-    <link rel="stylesheet" href="NEW ARRIVAL.css">
     <link rel="icon" type="image/png" href="INQUIRE logo.jpeg">
 </head>
 <body>
-    <!-- Navigation -->
+  <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="navbar-content">
                 <div class="logo">
-                    <img src="INQUIRE logo.jpeg" alt="INQUIRE Inventory Logo" class="logo-img">
-                    <span class="logo-text">INQUIRE</span>
+                    <img src="INQUIRE logo.jpeg" alt="INQUIRE STORE Logo" class="logo-img">
+                    <span class="logo-text">INQUIRE STORE</span>
                 </div>
                 <div class="hamburger" id="hamburger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="Shopnow.html">Shop Now</a></li>
-                    <li><a href="NEW ARRIVAL.HTML" class="active">New Arrivals</a></li>
-                    <li><a href="ABOUT.HTML">About</a></li>
-                    <li><a href="CONTACT.HTML">Contact</a></li>
-                    <li><a href="CART.HTML" class="cart-link">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
-                    <li><a href="login.html" class="login-link"><i class="fa-solid fa-circle-user"></i></a></li>
-                </ul>
+               <ul class="nav-links" id="navLinks">
+  <li><a href="index.html" class="active">Home</a></li>
+  <li><a href="Shopnow.html" class="active">Shop Now</a></li>
+  <li><a href="NEW ARRIVAL.HTML">New Arrivals</a></li>
+  <li><a href="ABOUT.HTML">About</a></li>
+  <li><a href="CONTACT.HTML">Contact</a></li>
+  <li><a href="CART.HTML" class="cart-link">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
+  <li><a href="login.html"><i class="fa-solid fa-circle-user"></i></a></li>
+</ul>
             </div>
         </div>
     </nav>
+
+    
+    <!-- Hero Section -->
+     <section class="hero-slider">
+
+    <div class="slider">
+
+        <figure id="sliderFigure">
+
+            <!-- Slide 1 -->
+            <div class="slide">
+                <img src="images/inquire 16.jpg" alt="Inquire Store">
+                <div class="slide-content">
+                    <h1>Inquire 1</h1>
+                    <p>leroum ipsum dolor sit amet, consectetur adipiscing elit.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <a href="Shopnow.html" class="shop-btn">Shop Now →</a>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <img src="images/image 4.jpg" alt="Inquire Store">
+                <div class="slide-content">
+                    <h1>Inquire 2</h1>
+                    <p>PREMIUM QUALITY &nbsp; | &nbsp; MODERN STYLE &nbsp; | &nbsp; FOR YOU</p>
+                    <a href="Shopnow.html" class="shop-btn">Shop Now →</a>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img src="images/image 3.jpg" alt="Inquire Store">
+                <div class="slide-content">
+                    <h1>Inquire 3</h1>
+                    <p>PREMIUM QUALITY &nbsp; | &nbsp; MODERN STYLE &nbsp; | &nbsp; FOR YOU</p>
+                    <a href="Shopnow.html" class="shop-btn">Shop Now →</a>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide">
+                <img src="images/image 7.jpg" alt="Inquire Store">
+                <div class="slide-content">
+                    <h1>Inquire 4</h1>
+                    <p>PREMIUM QUALITY &nbsp; | &nbsp; MODERN STYLE &nbsp; | &nbsp; FOR YOU</p>
+                    <a href="Shopnow.html" class="shop-btn">Shop Now →</a>
+                </div>
+            </div>
+
+        </figure>
+
+        <!-- Previous / Next buttons -->
+        <button class="slider-arrow prev" onclick="previousSlide()">‹</button>
+        <button class="slider-arrow next" onclick="nextSlide()">›</button>
+
+        <!-- 4 dots -->
+        <div class="dots">
+
+            <span class="dot active" onclick="goToSlide(0)"></span>
+
+            <span class="dot" onclick="goToSlide(1)"></span>
+
+            <span class="dot" onclick="goToSlide(2)"></span>
+
+            <span class="dot" onclick="goToSlide(3)"></span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 
     <!-- Page Header -->
     <section class="page-header">
@@ -271,6 +344,6 @@
         </div>
     </footer>
 
-    <script src="NEW ARRIVAL.js"></script>
+    <script src="SCRIPT.js"></script>
 </body>
 </html>

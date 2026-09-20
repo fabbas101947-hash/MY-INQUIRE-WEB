@@ -126,6 +126,88 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+let currentSlide = 0;
+
+const sliderFigure = document.querySelector("#sliderFigure");
+const dots = document.querySelectorAll(".dot");
+
+const totalSlides = 4;
+
+
+/* ==============================
+   SHOW SLIDE
+============================== */
+
+function goToSlide(index) {
+
+    currentSlide = index;
+
+    sliderFigure.style.transform =
+        `translateX(-${currentSlide * 100}%)`;
+
+    updateDots();
+}
+
+
+/* ==============================
+   UPDATE DOTS
+============================== */
+
+function updateDots() {
+
+    dots.forEach((dot, index) => {
+
+        dot.classList.toggle(
+            "active",
+            index === currentSlide
+        );
+
+    });
+
+}
+
+
+/* ==============================
+   NEXT
+============================== */
+
+function nextSlide() {
+
+    currentSlide++;
+
+    if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+    }
+
+    goToSlide(currentSlide);
+}
+
+
+/* ==============================
+   PREVIOUS
+============================== */
+
+function previousSlide() {
+
+    currentSlide--;
+
+    if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+    }
+
+    goToSlide(currentSlide);
+}
+
+
+/* ==============================
+   AUTO SLIDE
+============================== */
+
+setInterval(() => {
+
+    nextSlide();
+
+}, 5000);
 
 // ===== Smooth Scroll for Anchor Links =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -139,6 +221,41 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+});
+// Product card size click + add to cart
+document.querySelectorAll('.product-card').forEach(card => {
+  const sizes = card.querySelectorAll('.sizes span');
+  
+  sizes.forEach(size => {
+    if(size.classList.contains('out-of-stock')) return;
+    
+    size.addEventListener('click', (e) => {
+      e.stopPropagation();
+      
+      // remove active from other sizes in this card
+      sizes.forEach(s => s.classList.remove('selected'));
+      size.classList.add('selected');
+      
+      // get product data
+      const id = card.dataset.id;
+      const name = card.dataset.name;
+      const price = parseInt(card.dataset.price);
+      const selectedSize = size.textContent;
+      
+      // Add to cart (uses your existing function)
+      if (typeof addToCart === 'function') {
+        addToCart({ id: id + '-' + selectedSize, name: name + ' - ' + selectedSize, price: price });
+      } else {
+        alert(`${name} - Size ${selectedSize} added to cart`);
+      }
+    });
+  });
+  
+  // Click on card goes to detail page
+  card.addEventListener('click', () => {
+    // window.location.href = `product.html?id=${card.dataset.id}`;
+    console.log("Clicked:", card.dataset.id);
+  });
 });
 
 // ===== Contact Form Local Storage =====

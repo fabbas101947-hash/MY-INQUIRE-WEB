@@ -14,12 +14,13 @@
     <meta name="twitter:card" content="summary_large_image">
     <title>Shop Now</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="STYLE.CSS">
     <link rel="stylesheet" href="Shopnow.css">
     <link rel="icon" type="image/png" href="INQUIRE logo.jpeg">
 </head>
 <body>
-      <nav class="navbar">
+     <nav class="navbar">
         <div class="container">
             <div class="navbar-content">
                 <div class="logo">
@@ -31,84 +32,277 @@
                     <span></span>
                     <span></span>
                 </div>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="Shopnow.html">Shop Now</a></li>
-                    <li><a href="NEW ARRIVAL.HTML">New Arrivals</a></li>
-                    <li><a href="ABOUT.HTML">About</a></li>
-                    <li><a href="CONTACT.HTML">Contact</a></li>
-                    <li><a href="CART.HTML" class="cart-link">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
-                </ul>
+               <ul class="nav-links" id="navLinks">
+  <li><a href="index.html" class="active">Home</a></li>
+  <li><a href="Shopnow.html" class="active">Shop Now</a></li>
+  <li><a href="NEW ARRIVAL.HTML">New Arrivals</a></li>
+  <li><a href="ABOUT.HTML">About</a></li>
+  <li><a href="CONTACT.HTML">Contact</a></li>
+  <li><a href="CART.HTML" class="cart-link">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
+  <li><a href="login.html"><i class="fa-solid fa-circle-user"></i></a></li>
+</ul>
             </div>
         </div>
     </nav>
-   <section class="page-header">
-        <div class="container">
-            <h1>Shop Now</h1>
-            <img src="IMG_0220.jpg" alt="Premium Product Collection at INQUIRE STORE" class="hero-image" style="width: 100%; max-width: 600px; height: auto; margin-top: 20px;">
+
+  
+    <!-- Hero Section -->
+     <section class="hero-slider">
+
+    <div class="slider">
+
+        <figure id="sliderFigure">
+
+            <!-- Slide 1 -->
+            <div class="slide">
+                <img src="images/inquire 16.jpg" alt="Inquire Store">
+                <div class="slide-content">
+                    <h1>Inquire 1</h1>
+                    <p>leroum ipsum dolor sit amet, consectetur adipiscing elit.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <a href="Shopnow.html" class="shop-btn">Shop Now →</a>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <img src="images/image 4.jpg" alt="Inquire Store">
+                <div class="slide-content">
+                    <h1>Inquire 2</h1>
+                    <p>PREMIUM QUALITY &nbsp; | &nbsp; MODERN STYLE &nbsp; | &nbsp; FOR YOU</p>
+                    <a href="Shopnow.html" class="shop-btn">Shop Now →</a>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img src="images/image 3.jpg" alt="Inquire Store">
+                <div class="slide-content">
+                    <h1>Inquire 3</h1>
+                    <p>PREMIUM QUALITY &nbsp; | &nbsp; MODERN STYLE &nbsp; | &nbsp; FOR YOU</p>
+                    <a href="Shopnow.html" class="shop-btn">Shop Now →</a>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide">
+                <img src="images/image 7.jpg" alt="Inquire Store">
+                <div class="slide-content">
+                    <h1>Inquire 4</h1>
+                    <p>PREMIUM QUALITY &nbsp; | &nbsp; MODERN STYLE &nbsp; | &nbsp; FOR YOU</p>
+                    <a href="Shopnow.html" class="shop-btn">Shop Now →</a>
+                </div>
+            </div>
+
+        </figure>
+
+        <!-- Previous / Next buttons -->
+        <button class="slider-arrow prev" onclick="previousSlide()">‹</button>
+        <button class="slider-arrow next" onclick="nextSlide()">›</button>
+
+        <!-- 4 dots -->
+        <div class="dots">
+
+            <span class="dot active" onclick="goToSlide(0)"></span>
+
+            <span class="dot" onclick="goToSlide(1)"></span>
+
+            <span class="dot" onclick="goToSlide(2)"></span>
+
+            <span class="dot" onclick="goToSlide(3)"></span>
+
         </div>
-    </section>
-   <section class="shopnow_products">
-    <div class="container">
-        <div class="products-grid">
-            <h2 class="section-title">Shop Our Products</h2>
-        <div class="product_grid">
-             <article class="product-card" data-product-id="1" data-size="M" data-color="Black">
-                    <div class="product-image-wrapper">
-                        <img src="inquire 6.jpeg" alt="New Premium Collection Product 1 - INQUIRE Inventory" class="product-image">
-                        <span class="badge badge-new">NEW</span>
-                        <div class="overlay">
-                            <button class="btn btn-secondary btn-sm">Quick View</button>
-                        </div>
-                    </div>
-                    <div class="product-info"></div>
-                        <p class="price">PKR 129.99</p>
-                        <button class="btn btn-primary btn-add">Add to Cart</button>
-                    </div>
-                </article>
-                   <article class="product-card" data-product-id="1" data-size="M" data-color="Black">
-                    <div class="product-image-wrapper">
-                        <img src="inquire 14.jpeg" alt="New Premium Collection Product 1 - INQUIRE Inventory" class="product-image">
-                        <span class="badge badge-new">NEW</span>
-                        <div class="overlay">
-                            <button class="btn btn-secondary btn-sm">Quick View</button>
-                        </div>
-                    </div>
-                    <div class="product-info"></div>
-                        <p class="price">PKR 129.99</p>
-                        <button class="btn btn-primary btn-add">Add to Cart</button>
-                    </div>
-                </article>
-                      <article class="product-card" data-product-id="1" data-size="M" data-color="Black">
-                    <div class="product-image-wrapper">
-                        <img src="inquire 12.jpeg" alt="New Premium Collection Product 1 - INQUIRE Inventory" class="product-image">
-                        <span class="badge badge-new">NEW</span>
-                        <div class="overlay">
-                            <button class="btn btn-secondary btn-sm">Quick View</button>
-                        </div>
-                    </div>
-                    <div class="product-info"></div>
-                        <p class="price">PKR 129.99</p>
-                        <button class="btn btn-primary btn-add">Add to Cart</button>
-                    </div>
-                </article>
-                       <article class="product-card" data-product-id="1" data-size="M" data-color="Black">
-                    <div class="product-image-wrapper">
-                        <img src="inquire 12.jpeg" alt="New Premium Collection Product 1 - INQUIRE Inventory" class="product-image">
-                        <span class="badge badge-new">NEW</span>
-                        <div class="overlay">
-                            <button class="btn btn-secondary btn-sm">Quick View</button>
-                        </div>
-                    </div>
-                    <div class="product-info"></div>
-                        <p class="price">PKR 129.99</p>
-                        <button class="btn btn-primary btn-add">Add to Cart</button>
-                    </div>
-                </article>
-        </div>
+
     </div>
-   </section>
-   <script src="SCRIPT.js"></script>
-    
+
+</section>
+
+<div class="product-grid">
+
+  <!-- Card 1 -->
+  <div class="product-card" data-id="MP0640P" data-name="Navy Blue Cut & Sew Stripe Polo Shirt with '93' Embroidery" data-price="4590">
+    <div class="product-image">
+      <span class="badge">New</span>
+      <img src="inquire 8.jpeg" alt="Navy Blue Polo">
+    </div>
+    <div class="product-info">
+      <h3 class="product-title">Navy Blue Cut & Sew Stripe Polo Shirt with '93' Embroidery (Plus Size) - S26 - MP0640P</h3>
+      <p class="price">Rs.4,590</p>
+      <div class="sizes">
+        <span>XL</span><span>2XL</span><span>3XL</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 with Save badge -->
+  <div class="product-card" data-id="MP0651P" data-name="Pack of 2 Plus Size Polo Shirts Maroon & Brown" data-price="8499">
+    <div class="product-image">
+      <span class="badge save">Save 1281 PKR</span>
+      <img src="inquire 9.jpeg" alt="Pack of 2 Polo">
+    </div>
+    <div class="product-info">
+      <h3 class="product-title">Pack of 2 Plus Size Polo Shirts Maroon & Brown (Plus Size) - A26 - MP0651P</h3>
+      <p class="price"><span class="old-price">Rs.9,780</span> Rs.8,499</p>
+      <div class="sizes">
+        <span>2XL</span><span>3XL</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="product-card" data-id="MSH311P" data-name="White Waffle Textured Resort Shirt" data-price="3690">
+    <div class="product-image">
+      <span class="badge">New</span>
+      <img src="Male Model Shirt and Jeans.png" alt="White Resort Shirt">
+    </div>
+    <div class="product-info">
+      <h3 class="product-title">White Waffle Textured Resort Shirt (Plus Size) - S26 - MSH311P</h3>
+      <p class="price"><span class="old-price">Rs.4,790</span> Rs.3,690</p>
+      <div class="sizes">
+        <span class="out-of-stock">XL</span><span>2XL</span><span>3XL</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="product-card" data-id="MP0629P" data-name="Chocolate Brown Embroidered Polo Shirt" data-price="4890">
+    <div class="product-image">
+      <span class="badge">New</span>
+      <img src="images/Male Model Shirt 2.png" alt="Chocolate Brown Polo">
+    </div>
+    <div class="product-info">
+      <h3 class="product-title">Chocolate Brown Embroidered Polo Shirt (Plus Size) - S26 - MP0629P</h3>
+      <p class="price">Rs.4,890</p>
+      <div class="sizes">
+        <span>XL</span><span>2XL</span><span>3XL</span>
+      </div>
+    </div>
+  </div>
+<div class="product-card" data-id="MP0629P" data-name="Chocolate Brown Embroidered Polo Shirt" data-price="4890">
+    <div class="product-image">
+      <span class="badge">New</span>
+      <img src="images/Male Model Shirt 3.png" alt="Chocolate Brown Polo">
+    </div>
+    <div class="product-info">
+      <h3 class="product-title">Chocolate Brown Embroidered Polo Shirt (Plus Size) - S26 - MP0629P</h3>
+      <p class="price">Rs.4,890</p>
+      <div class="sizes">
+        <span>XL</span><span>2XL</span><span>3XL</span>
+      </div>
+    </div>
+  </div>
+  <div class="product-card" data-id="MP0629P" data-name="Chocolate Brown Embroidered Polo Shirt" data-price="4890">
+    <div class="product-image">
+      <span class="badge">New</span>
+      <img src="images/Male Model Shirt 3.1.png" alt="Chocolate Brown Polo">
+    </div>
+    <div class="product-info">
+      <h3 class="product-title">Chocolate Brown Embroidered Polo Shirt (Plus Size) - S26 - MP0629P</h3>
+      <p class="price">Rs.4,890</p>
+      <div class="sizes">
+        <span>XL</span><span>2XL</span><span>3XL</span>
+        <button class="add-to-cart-btn" data-id="MP0629P" data-name="Chocolate Brown Embroidered Polo Shirt" data-price="4890">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="product-card" data-id="MP0629P" data-name="Chocolate Brown Embroidered Polo Shirt" data-price="4890">
+    <div class="product-image">
+      <span class="badge">New</span>
+      <img src="images/Male Model Shirt 4.png" alt="Chocolate Brown Polo">
+    </div>
+    <div class="product-info">
+      <h3 class="product-title">Chocolate Brown Embroidered Polo Shirt (Plus Size) - S26 - MP0629P</h3>
+      <p class="price">Rs.4,890</p>
+      <div class="sizes">
+        <span>XL</span><span>2XL</span><span>3XL</span>
+      </div>
+    </div>
+  </div>
+  <div class="product-card" data-id="MP0629P" data-name="Chocolate Brown Embroidered Polo Shirt" data-price="4890">
+    <div class="product-image">
+      <span class="badge">New</span>
+      <img src="images/Male Model Shirt 2.png" alt="Chocolate Brown Polo">
+    </div>
+    <div class="product-info">
+      <h3 class="product-title">Chocolate Brown Embroidered Polo Shirt (Plus Size) - S26 - MP0629P</h3>
+      <p class="price">Rs.4,890</p>
+      <div class="sizes">
+        <span>XL</span><span>2XL</span><span>3XL</span>
+      </div>
+    </div>
+  </div>
+  <div class="product-card" data-id="MP0629P" data-name="Chocolate Brown Embroidered Polo Shirt" data-price="4890">
+    <div class="product-image">
+      <span class="badge">New</span>
+      <img src="images/Male Model Shirt 2.png" alt="Chocolate Brown Polo">
+    </div>
+    <div class="product-info">
+      <h3 class="product-title">Chocolate Brown Embroidered Polo Shirt (Plus Size) - S26 - MP0629P</h3>
+      <p class="price">Rs.4,890</p>
+      <div class="sizes">
+        <span>XL</span><span>2XL</span><span>3XL</span>
+      </div>
+    </div>
+  </div>
+  <div class="product-card" data-id="MP0629P" data-name="Chocolate Brown Embroidered Polo Shirt" data-price="4890">
+    <div class="product-image">
+      <span class="badge">New</span>
+      <img src="images/Male Model Shirt 2.png" alt="Chocolate Brown Polo">
+    </div>
+    <div class="product-info">
+      <h3 class="product-title">Chocolate Brown Embroidered Polo Shirt (Plus Size) - S26 - MP0629P</h3>
+      <p class="price">Rs.4,890</p>
+      <div class="sizes">
+        <span>XL</span><span>2XL</span><span>3XL</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <img src="INQUIRE logo.jpeg" alt="INQUIRE STORE Logo" class="logo-img">
+                    <span class="logo-text">INQUIRE STORE</span>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Shopnow.html">Shop Now</a></li>
+                        <li><a href="NEW ARRIVAL.HTML">New Arrivals</a></li>
+                        <li><a href="ABOUT.HTML">About Us</a></li>
+                        <li><a href="CONTACT.HTML">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="CONTACT.html">Contact Us</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms & Conditions</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#facebook" aria-label="Facebook">f</a>
+                        <a href="#twitter" aria-label="Twitter">𝕏</a>
+                        <a href="#instagram" aria-label="Instagram">📷</a>
+                        <a href="#linkedin" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 INQUIRE STORE. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a
+                        href="#terms">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+   <script src="SCRIPT.js"></script>    
 </body>
 </html>
