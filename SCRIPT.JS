@@ -532,6 +532,18 @@ function updateActiveNavLink() {
         }
     });
 }
+// Auto hide popup after 5 sec, show again on hover
+const popup = document.getElementById('waPopup');
+setTimeout(() => { if(popup) popup.style.display = 'none'; }, 5000);
+
+document.getElementById('waBtn').addEventListener('mouseenter', () => {
+  popup.style.display = 'flex';
+});
+function closeWaPopup() {
+  popup.style.display = 'none';
+}
+// FLOATING WHATSAPP BUTTON END 
+
 
 // ===== Image Lazy Loading =====
 if ('IntersectionObserver' in window) {
